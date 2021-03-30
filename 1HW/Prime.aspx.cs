@@ -11,22 +11,25 @@ namespace _1HW
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int num = 6;
-            int sum = 0;
-            for (int i = 1; i <= num; i++)
+            int num = 9;
+            bool isPrime = true;
+            if (num != 1)
             {
-                if (num % i == 0)
+                for (int i = 2; i < num; i++)
                 {
-                    sum += 1;
+                    if (num % i == 0)
+                    {
+                        isPrime = false;
+                    }
                 }
             }
-            if (sum == 7)
+            if (isPrime)
             {
-                Response.Write("Yes");
+                Response.Write("YES");
             }
             else
             {
-                Response.Write("No");
+                Response.Write("NO");
             }
         }
     }
